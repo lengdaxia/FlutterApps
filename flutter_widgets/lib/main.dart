@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '1_WidgetsLiftCycle/WidgetLifecyclePage.dart';
+import '1_WidgetsLiftCycle/StatelessWidgetsPage.dart';
+import '1_WidgetsLiftCycle/StatefulWidgetsPage.dart';
 
 void main(List<String> args) {
   runApp(new MyApp());
@@ -14,7 +16,9 @@ class MyApp extends StatelessWidget{
         primaryColor: Colors.red,
       ),
       routes: {
-        'WidgetLifecyclePage':(context)=> WidgetLifecyclePage()
+        'WidgetLifecyclePage':(context)=> WidgetLifecyclePage(),
+        'StatelessWidgetsPage':(context)=> StatelessWidgetsPage(),
+        // 'StatefullWidgetsPage':(context)=> Statefull
       },
       home: MyHomePage(),
     );

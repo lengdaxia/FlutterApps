@@ -20,7 +20,19 @@ class WidgetLifecyclePage extends StatelessWidget{
             new Text('deactive()'),
             new Text('dispose()'),
             new Divider(),
-            new Text('data'),
+            new Text('State widgets'),
+            new FlatButton(
+              onPressed: (){
+                Navigator.of(context).pushNamed('StatelessWidgetsPage');
+              },
+              child: Text('StatelessWidgetsPage'),
+            ),
+            new FlatButton(
+              onPressed: (){
+                Navigator.of(context).pushNamed('StatefillWidgetsPage');
+              },
+              child: Text('StatefullWidgetsPage'),
+            ),
           ],
         ),
       ),
