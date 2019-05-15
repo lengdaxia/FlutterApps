@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class StatefullWidgetsPage extends StatelessWidget{
 
@@ -6,11 +7,29 @@ class StatefullWidgetsPage extends StatelessWidget{
   Widget build(BuildContext context) {
     // return CounterWidget();
     // return Text('');
-    return new Scaffold(
-      appBar: AppBar(
-        title: Text('Statefull widget page'),
+    return new CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        // middle: Text('Statefull widget page'),
+        leading: Icon(Icons.arrow_back_ios),
+        // trailing: Icon(Icons.menu),
+        trailing: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: <Widget>[ 
+            Icon(CupertinoIcons.add),
+            Icon(CupertinoIcons.back),
+           ],
+        ),
       ),
-      body: new CounterWidget(),
+      child: Center(
+        child: CupertinoButton(
+          color: CupertinoColors.activeBlue,
+          child: Text('press'),
+          onPressed: (){
+            print('pressed ios btn');
+          },
+        ),
+      ),
+      // body: new CounterWidget(),
     );
   }
 }
