@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'StatefulWidgetsPage.dart';
 
 class WidgetLifecyclePage extends StatelessWidget{
   @override
@@ -29,7 +30,10 @@ class WidgetLifecyclePage extends StatelessWidget{
             ),
             new FlatButton(
               onPressed: (){
-                Navigator.of(context).pushNamed('StatefillWidgetsPage');
+                Navigator.push(context, new MaterialPageRoute(builder: (context){
+                    // return CounterWidget(initValue: 8);
+                    return StatefullWidgetsPage();
+                }));
               },
               child: Text('StatefullWidgetsPage'),
             ),
