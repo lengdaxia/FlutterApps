@@ -26,15 +26,15 @@ class ListExamplePage extends StatelessWidget {
       ),
       body: ListView.builder(
         itemBuilder: (BuildContext context, int position) => 
-        // _getRowWithDivider(position),
-        _getRowWithBoxDecoration(position),
+        _getRowWithDivider(position),
+        // _getRowWithBoxDecoration(position),
       ));
   }
 }
 Widget _getRowWithDivider(int i) {
   var children = <Widget>[
     Padding(padding: EdgeInsets.all(10.0),child: Text('Text $i'),),
-    Divider(height: 5.0,)
+    Divider(height: 5.0,color: Colors.teal,)
   ];
 
   return Column(
