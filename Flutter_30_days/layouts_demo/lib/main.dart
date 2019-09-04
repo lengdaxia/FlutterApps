@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
-  runApp(LayoutExampleApp());
+  runApp(new LayoutExampleApp());
 }
 
 class LayoutExampleApp extends StatelessWidget{
@@ -29,7 +29,7 @@ class HomeScreen extends  StatefulWidget{
 
 class _HomeScreenState extends State<HomeScreen> {
 
-  PageController _pageController = new PageController(initialPage: 2);
+  PageController _pageController = new PageController(initialPage: 0);
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,6 @@ class _HomeScreenState extends State<HomeScreen> {
     TextTheme textTheme = Theme.of(context).textTheme;
 
     return new Stack(
-
       children: <Widget>[
       new Container(
         decoration: BoxDecoration(
@@ -81,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
           elevation: 0.0,
           leading: new Center(
             child: new ClipOval(
-              child: new Image.network('http://i.imgur/com/TtNPTe0.jpg'),
+              child: new Image.network('http://i.imgur.com/TtNPTe0.jpg'),
             ),
           ),
           actions: <Widget>[
@@ -92,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
               },
             ),
           ],
-          title: const Text('tofu\'s songs'),
+          title: const Text('marlon\'s songs'),
           bottom: new CustomTabBar(_pageController, pages.keys.toList()),
         ),
         body: new PageView(
@@ -112,7 +111,7 @@ class CustomTabBar extends AnimatedWidget implements PreferredSizeWidget {
   final List<String> pageNames;
 
   @override
-  final Size preferredSize = new Size(0.0,40.0);
+  final Size preferredSize = new Size(0.0, 40.0);
 
   @override
   Widget build(BuildContext context) {
