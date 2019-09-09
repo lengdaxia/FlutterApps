@@ -70,12 +70,6 @@ class _BarChartState extends State<BarChart> {
       ),
     ) ,
     );
-    return 
-     Center(
-      child: CustomPaint(
-        painter: BarChartPainter(barHeights),
-      ),
-    );
   }
 }
 
