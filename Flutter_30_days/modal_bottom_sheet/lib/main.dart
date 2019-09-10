@@ -58,7 +58,13 @@ class MyHomePage extends StatelessWidget{
         ],
       ),
       ),
-      floatingActionButton: FloatingActionButton(
+      
+      floatingActionButton:
+       FloatingActionButton(
+        // elevation: 0.5,
+        // highlightElevation: 1.0,
+        // foregroundColor: Colors.,
+        backgroundColor: Colors.amber,
         onPressed: ()=> Provider.of<Incrementer>(context).increment(),
         tooltip: 'Increment',
         child: Icon(Icons.add),
@@ -73,6 +79,8 @@ class BottomBar extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return BottomAppBar(
+      shape: CircularNotchedRectangle(),
+      notchMargin: 10.0,
       color: Theme.of(context).primaryColor,
       child: Row(children: <Widget>[
         Padding(padding: EdgeInsets.only(left: 20.0),
