@@ -9,7 +9,11 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'scrolling_detection',
-      home: ScrollingDetectionPage(),
+      home: Scaffold(
+        appBar: AppBar(title: Text('Scrolling Detection'),
+        ),
+        body: ScrollingDetectionPage(),
+      ),
     );
   }
 }
@@ -54,13 +58,12 @@ class _ScrollingDetectionPageState extends State<ScrollingDetectionPage>{
             child: Expanded(
               child: ListView(
                 children: 
-                  List<ListTile>.generate(100, (i) => ListTile(title: Text('$i'),)
-                  ),
+                  List<ListTile>.generate(100, (i) => ListTile(title: Text('$i')),),
               ),
             ),
           ),
         )
       ],
-    )
+    );
   }
 }
