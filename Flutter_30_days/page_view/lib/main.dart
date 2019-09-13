@@ -9,9 +9,10 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       title: 'Page_view demo',
       home:Scaffold(
-        body: SafeArea(
-          child: PaperWrapper(),
-        ),
+        body: PaperWrapper(),
+        // SafeArea(
+        //   child: 
+        // ),
       ),
     );
   }
