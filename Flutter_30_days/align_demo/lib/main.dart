@@ -77,8 +77,6 @@ class AlignExamples extends StatelessWidget{
               alignment: Alignment(0, 0.95),
               child: Text('Bootom Center'),
             ),
-      
-
           ],
         ),
       )
