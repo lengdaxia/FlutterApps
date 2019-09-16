@@ -55,21 +55,21 @@ class MySliverPage extends StatelessWidget{
             crossAxisSpacing: 0,
             ),
           ),
-          SliverToBoxAdapter(
-            child:Container(
-              height:50,child:Center(child:Text('I\'m a regular widget')),//
-            ),
+        SliverToBoxAdapter(
+          child:Container(
+            height:50,child:Center(child:Text('I\'m a regular widget')),//
           ),
-          SliverAppBar(
-            title:Text('I\'m a sticky app bar'),
-            pinned:true,
-            primary:false,
-          ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (context, index) => Container(color:getRandomColor(), height:150.0),
-            )
+        ),
+        SliverAppBar(
+          title:Text('I\'m a sticky app bar'),
+          pinned:true,
+          primary:false,
+        ),
+        SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (context, index) => Container(color:getRandomColor(), height:150.0),
           )
+        )
 
       ],
     );
