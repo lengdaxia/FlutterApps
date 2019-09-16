@@ -89,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
           ],
         );
       },
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
     );
   }
 }
