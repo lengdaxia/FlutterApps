@@ -6,8 +6,8 @@ void main(List<String> args) {
   SystemChrome.setEnabledSystemUIOverlays([]);
 
   runApp(
-    Bottom(
-      child: RichText(
+    BottomAsYouShouldWriteIt(
+       RichText(
         text: TextSpan(
           text: '你好，Flutter',
           style: TextStyle(
@@ -29,6 +29,20 @@ class Bottom extends SingleChildRenderObjectWidget{
     return RenderPositionedBox(
       alignment: Alignment.bottomCenter,
       textDirection: Directionality.of(context),
+    );
+  }
+}
+
+// 另外一种typical way for creating layout widgets;
+class BottomAsYouShouldWriteIt extends StatelessWidget{
+  BottomAsYouShouldWriteIt(this.child);
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.topCenter,
+      child: child,
     );
   }
 }
