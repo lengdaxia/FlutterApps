@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
+import 'dart:convert';
+
 
 class HomePage extends StatefulWidget {
   @override
@@ -7,7 +9,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  TextEditingController textController;
+
+  TextEditingController _controller = TextEditingController();
   String tipText = "欢迎光临";
 
   @override
@@ -17,8 +20,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void dispose() {
+    _controller.dispose();
     super.dispose();
-    textController.dispose();
   }
 
   @override
@@ -32,7 +35,7 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             children: <Widget>[
               TextField(
-                controller: textController,
+                controller: _controller,
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.all(10.0),
                   labelText: '水果类型',
@@ -41,9 +44,7 @@ class _HomePageState extends State<HomePage> {
                 autofocus: false,
               ),
               RaisedButton(
-                onPressed: (){
-                  _choiceAction();
-                },
+                onPressed: _choiceAction,
                 child: Text('选择完毕'),
               ),
               Text(
@@ -57,30 +58,29 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _choiceAction(){
-    print('点击了提交了');
 
-    getData(textController.text.toString()).then((value){
+    print("点击了提交了 ${this._controller.text} ");
+
+    if(this._controller.text.toString() == ''){
+      print("输入文字为空");
+      showDialog(
+        context: context,
+        builder: (context){
+          return AlertDialog(
+            title: Text('请选择类型'),
+          );
+        }
+      );
+    }else{
+      print("请求网络");
+       getData(this._controller.text).then( (value){
         setState(() {
-          tipText = value[0]['name'].toString();
+          final modelList = json.decode(value);
+          tipText = modelList[0]['fields']['name'];
         });
-    });
-
-    // if(textController.text.toString() == ''){
-    //   showDialog(
-    //     context: context,
-    //     builder: (context){
-    //       return AlertDialog(
-    //         title: Text('请选择类型'),
-    //       );
-    //     }
-    //   );
-    // }else{
-    //   getData(textController.text.toString()).then((value){
-    //     setState(() {
-    //       tipText = value[0]['name'].toString();
-    //     });
-    //   });
-    // }
+        }
+      );
+    }
   }
 
   Future getData(String text) async {
@@ -89,14 +89,23 @@ class _HomePageState extends State<HomePage> {
       var para = {
         'name':text
       };
-      print(para);
-
       res = await Dio().get(
         "http://127.0.0.1:8000/products/",
       );
-      print(res.data);
-
       return res.data;
+    }catch(e){
+      print(e);
+    }
+  }
+
+  Future postData() async{
+    try{
+      Response res;
+      Dio dio = Dio();
+      dio.options.headers = {};
+      res = await dio.get('');
+      return res.data;
+
     }catch(e){
       print(e);
     }
