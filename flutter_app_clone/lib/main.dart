@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Widget> _generateItem(BuildContext context, List<PageInfo> children) {
     return children.map<Widget>((page){
       return ListTile(
-        title: Text(page.title),
+        title: Text(page.title, style: TextStyle(color: Colors.red[400])),
         contentPadding: EdgeInsets.only(left: 30,right: 16),
         trailing: Icon(Icons.keyboard_arrow_right),
         onTap: () => _openPage(context, page),
@@ -68,6 +68,24 @@ class _MyHomePageState extends State<MyHomePage> {
             title: Text("第一个Flutter应用"),
             children: _generateItem(context, [
               PageInfo("路由传值", (ctx) => RouterTextPage()),
+            ]),
+          ),
+          ExpansionTile(
+            title: Text('基础组件'),
+            children: _generateItem(context, [
+              PageInfo("文本， 字体样式",(context) => null),
+              PageInfo("按钮",(context) => null),
+              PageInfo("图片伸缩",(context) => null),
+              PageInfo("单选开关和复选框",(context) => null),
+              PageInfo("进度条",(context) => null),
+            ]),
+          ),
+          ExpansionTile(
+            title: Text('布局类组件'),
+            children: _generateItem(context, [
+              PageInfo("Column居中",(context) => null),
+              PageInfo("表格布局",(context) => null),
+              PageInfo("对其及相对定位",(context) => null),
             ]),
           )
         ],
