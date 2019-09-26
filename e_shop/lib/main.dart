@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './pages/index_page.dart';
+import './config/routers.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
           primaryColor: Colors.pink,
         ),
         home: IndexPage(),
+        routes: appRoutes,
       ),
     );
   }

@@ -238,6 +238,11 @@ class _LoginPageState extends State<LoginPage>{
                           FlatButton(
                             child: Text('Login',style: TextStyle(color: Theme.of(context).primaryColor, decoration: TextDecoration.underline),),
                             onPressed: (){
+                              Navigator.of(context).push(
+                                MaterialPageRoute(builder: (context){
+                                  return HomePage();
+                                })
+                              );
                               print("点击了登录");
                             },
                           )

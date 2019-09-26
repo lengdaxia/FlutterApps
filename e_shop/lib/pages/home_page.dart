@@ -58,6 +58,8 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _choiceAction(){
+    Navigator.pushNamed(context, 'detail');
+    return;
 
     print("点击了提交了 ${this._controller.text} ");
 
@@ -77,6 +79,8 @@ class _HomePageState extends State<HomePage> {
         setState(() {
           final modelList = json.decode(value);
           tipText = modelList[0]['fields']['name'];
+          
+          Navigator.pushNamed(context, 'detail');
         });
         }
       );

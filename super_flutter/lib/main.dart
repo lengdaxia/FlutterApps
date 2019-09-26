@@ -8,10 +8,10 @@ void main(List<String> args)  {
 
 class MyApp extends StatefulWidget{
   MyApp() {
+    say('Bod','Howdy');
     // final router = new Router();
     Application.env;
   }
-
 
 
 
@@ -99,11 +99,29 @@ class _MyAppState extends State<MyApp> {
 
 void _checkInfo() async{
   print('检查相关信息');
+
+  Future.delayed(Duration(seconds:2),(){
+
+  }).then((data){
+
+  }).catchError((){
+
+  }).whenComplete((){
+
+  });
 }
 
 void _startMessagePush() async{
   print("初始化push");
   // 这里使用firebase_messaging 来进行推送
   print("初始化成功");
+}
+
+String say(String from, String msg, [String device]){
+  var result = '$from says $msg';
+  if(device != null){
+    result = '$result with a $device';
+  }
+  return result;
 }
 
