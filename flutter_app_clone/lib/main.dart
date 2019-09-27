@@ -75,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
             children: _generateItem(context, [
               PageInfo("文本， 字体样式",(context) => TextPage()),
               PageInfo("按钮",(context) => ButtonPage()),
-              PageInfo("图片伸缩",(context) => null),
+              PageInfo("图片伸缩",(context) => ImageAndIconPage()),
               PageInfo("单选开关和复选框",(context) => null),
               PageInfo("进度条",(context) => null),
             ]),
