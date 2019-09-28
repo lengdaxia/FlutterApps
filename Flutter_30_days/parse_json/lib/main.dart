@@ -72,6 +72,7 @@ class _UserListPageState extends State<UserListPage> {
 }
 
 final jsonEndPoint = 'https://jsonplaceholder.typicode.com/users';
+final url = "http://127.0.0.1:8000/users";
 
 class User {
   final String name;
@@ -107,7 +108,8 @@ class Address {
 
 Future <List<User>> fetchAndParseUsers() async {
 
-  var res = await http.get(jsonEndPoint);
+  var res = await http.get(url);
+  // var res = await http.get(jsonEndPoint);
   var jsonStr = res.body;
   var parsedUserList = json.decode(jsonStr);
   var userList = <User>[];
