@@ -76,6 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
             title: Text('基础组件'),
             children: _generateItem(context, [
               PageInfo("文本， 字体样式",(context) => TextPage()),
+              PageInfo("textfield", (context) => TextFieldPage()),
               PageInfo("按钮",(context) => ButtonPage()),
               PageInfo("图片伸缩",(context) => ImageAndIconPage()),
               PageInfo("单选开关和复选框",(context) => SwitchPage()),
@@ -85,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ExpansionTile(
             title: Text('布局类组件'),
             children: _generateItem(context, [
-              PageInfo("Column居中",(context) => null),
+              PageInfo("Column居中",(context) => CenterColumnPage()),
               PageInfo("表格布局",(context) => null),
               PageInfo("对其及相对定位",(context) => null),
             ]),
