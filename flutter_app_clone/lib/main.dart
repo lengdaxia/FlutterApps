@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_clone/pages/progress_demo_page.dart';
+import 'package:flutter_app_clone/pages/switch_demo_page.dart';
 import 'base_page.dart';
 import 'pages/index.dart';
 
@@ -76,8 +78,8 @@ class _MyHomePageState extends State<MyHomePage> {
               PageInfo("文本， 字体样式",(context) => TextPage()),
               PageInfo("按钮",(context) => ButtonPage()),
               PageInfo("图片伸缩",(context) => ImageAndIconPage()),
-              PageInfo("单选开关和复选框",(context) => null),
-              PageInfo("进度条",(context) => null),
+              PageInfo("单选开关和复选框",(context) => SwitchPage()),
+              PageInfo("进度条",(context) => ProgressPage()),
             ]),
           ),
           ExpansionTile(
