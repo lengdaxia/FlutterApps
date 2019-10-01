@@ -87,8 +87,17 @@ class _MyHomePageState extends State<MyHomePage> {
             title: Text('布局类组件'),
             children: _generateItem(context, [
               PageInfo("Column居中",(context) => CenterColumnPage()),
-              PageInfo("表格布局",(context) => null),
-              PageInfo("对其及相对定位",(context) => null),
+              PageInfo("表格布局",(context) => TablePage()),
+              PageInfo("对齐及相对定位",(context) => AlignPgae()),
+            ]),
+          ),
+          ExpansionTile(
+            title: Text('容器类组件'),
+            children: _generateItem(context, [
+              PageInfo('填充Paddding', (context) => null),
+              PageInfo('尺寸限制类容器', (context) => null),
+              PageInfo('DecoratedBox', (context) => null),
+              PageInfo('Scaffold, tabbar, 底部导航栏', (context) => null),
             ]),
           )
         ],
