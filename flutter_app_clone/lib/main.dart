@@ -96,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
             children: _generateItem(context, [
               PageInfo('填充Paddding', (context) => PaddingPage()),
               PageInfo('尺寸限制类容器', (context) => SizeConstraintsPage()),
-              PageInfo('DecoratedBox', (context) => null),
+              PageInfo('DecoratedBox', (context) => DecoratedBoxPage()),
               PageInfo('Scaffold, tabbar, 底部导航栏', (context) => null),
             ]),
           )
