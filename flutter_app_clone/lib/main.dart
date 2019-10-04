@@ -97,7 +97,18 @@ class _MyHomePageState extends State<MyHomePage> {
               PageInfo('填充Paddding', (context) => PaddingPage()),
               PageInfo('尺寸限制类容器', (context) => SizeConstraintsPage()),
               PageInfo('DecoratedBox', (context) => DecoratedBoxPage()),
-              PageInfo('Scaffold, tabbar, 底部导航栏', (context) => null),
+              PageInfo('Scaffold, tabbar, 底部导航栏', (context) => ScaffoldPage()),
+            ]),
+          ),
+          ExpansionTile(
+            title: Text("功能性组件"),
+            children: _generateItem(context, [
+              PageInfo('数据共享（inheritedWidget）', (context) => PaddingPage()),
+              PageInfo('跨组件状况管理(Provider)', (context) => SizeConstraintsPage()),
+              PageInfo('颜色和MaterialColor', (context) => DecoratedBoxPage()),
+              PageInfo('主题-Theme', (context) => ScaffoldPage()),
+              PageInfo('FutureBuilder和StreamBuilder', (context) => ScaffoldPage()),
+              PageInfo('对话框', (context) => ScaffoldPage()),
             ]),
           )
         ],

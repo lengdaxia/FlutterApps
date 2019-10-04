@@ -12,3 +12,4 @@ export 'align_demo_page.dart';
 export 'padding_demo_page.dart';
 export 'size_constranits_page.dart';
 export 'decoratebox_demo_page.dart';
+export 'scaffold_demo_page.dart';
