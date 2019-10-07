@@ -13,3 +13,4 @@ export 'padding_demo_page.dart';
 export 'size_constranits_page.dart';
 export 'decoratebox_demo_page.dart';
 export 'scaffold_demo_page.dart';
+export 'inherited_widget_page.dart';

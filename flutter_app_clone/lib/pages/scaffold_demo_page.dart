@@ -51,9 +51,10 @@ class _ScaffoldPageState extends State<ScaffoldPage> with SingleTickerProviderSt
           children: <Widget>[
             IconButton(
               icon: Icon(Icons.home),
+              onPressed: null,
             ),
             SizedBox(),
-            IconButton(icon: Icon(Icons.business),),
+            IconButton(icon: Icon(Icons.business),onPressed: null,),
           ],
         ),
         

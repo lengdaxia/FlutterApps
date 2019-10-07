@@ -97,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
               PageInfo('填充Paddding', (context) => PaddingPage()),
               PageInfo('尺寸限制类容器', (context) => SizeConstraintsPage()),
               PageInfo('DecoratedBox', (context) => DecoratedBoxPage()),
-              PageInfo('Scaffold, tabbar, 底部导航栏', (context) => ScaffoldPage()),
+              PageInfo('Scaffold, tabbar, 底部导航栏', (context) => ScaffoldPage(), withScaffold: false),
             ]),
           ),
           ExpansionTile(
@@ -109,6 +109,49 @@ class _MyHomePageState extends State<MyHomePage> {
               PageInfo('主题-Theme', (context) => ScaffoldPage()),
               PageInfo('FutureBuilder和StreamBuilder', (context) => ScaffoldPage()),
               PageInfo('对话框', (context) => ScaffoldPage()),
+            ]),
+          ),
+          ExpansionTile(
+            title: Text("时间处理与通知"),
+            children: _generateItem(context, [
+              PageInfo('通知（Notification）', (context) => PaddingPage()),
+            ]),
+          ),
+          ExpansionTile(
+            title: Text("自定义组件"),
+            children: _generateItem(context, [
+              PageInfo('数据共享（inheritedWidget）', (context) => PaddingPage()),
+              PageInfo('跨组件状况管理(Provider)', (context) => SizeConstraintsPage()),
+              PageInfo('颜色和MaterialColor', (context) => DecoratedBoxPage()),
+              PageInfo('主题-Theme', (context) => ScaffoldPage()),
+              PageInfo('FutureBuilder和StreamBuilder', (context) => ScaffoldPage()),
+              PageInfo('对话框', (context) => ScaffoldPage()),
+            ]),
+          ),
+          ExpansionTile(
+            title: Text("Flutter原理"),
+            children: _generateItem(context, [
+              PageInfo('图片加载原理与缓存', (context) => PaddingPage()),
+            ]),
+          ),
+          ExpansionTile(
+            title: Text("动画"),
+            children: _generateItem(context, [
+              PageInfo('放大动画-原始版本', (context) => PaddingPage()),
+              PageInfo('跨组件状况管理(Provider)', (context) => SizeConstraintsPage()),
+              PageInfo('颜色和MaterialColor', (context) => DecoratedBoxPage()),
+              PageInfo('主题-Theme', (context) => ScaffoldPage()),
+              PageInfo('FutureBuilder和StreamBuilder', (context) => ScaffoldPage()),
+              PageInfo('对话框', (context) => ScaffoldPage()),
+              PageInfo('FutureBuilder和StreamBuilder', (context) => ScaffoldPage()),
+              PageInfo('对话框', (context) => ScaffoldPage()),
+            ]),
+          ),
+          ExpansionTile(
+            title: Text("包与插件"),
+            children: _generateItem(context, [
+              PageInfo('相机', (context) => PaddingPage()),
+              PageInfo('PlatformView示例（Webview）', (context) => SizeConstraintsPage()),
             ]),
           )
         ],
