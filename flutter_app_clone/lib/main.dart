@@ -103,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ExpansionTile(
             title: Text("功能性组件"),
             children: _generateItem(context, [
-              PageInfo('数据共享（inheritedWidget）', (context) => PaddingPage()),
+              PageInfo('数据共享（inheritedWidget）', (context) => InheritedWidgetPage()),
               PageInfo('跨组件状况管理(Provider)', (context) => SizeConstraintsPage()),
               PageInfo('颜色和MaterialColor', (context) => DecoratedBoxPage()),
               PageInfo('主题-Theme', (context) => ScaffoldPage()),
