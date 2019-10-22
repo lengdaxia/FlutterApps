@@ -105,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
             children: _generateItem(context, [
               PageInfo('数据共享（inheritedWidget）', (context) => InheritedWidgetPage()),
               PageInfo('跨组件状况管理(Provider)', (context) => ProviderPage()),
-              PageInfo('颜色和MaterialColor', (context) => null),
+              PageInfo('颜色和MaterialColor', (context) => ColorPage()),
               PageInfo('主题-Theme', (context) => null),
               PageInfo('FutureBuilder和StreamBuilder', (context) => null),
               PageInfo('对话框', (context) => null),
