@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_browser/flutter_web_browser.dart';
+
 
 class RouterTextPage extends StatelessWidget {
   @override
@@ -49,6 +51,8 @@ class TipPage extends StatelessWidget {
                 RaisedButton(
                   child: Text('back'),
                   onPressed: (){
+
+                    FlutterWebBrowser.openWebPage(url: "https://flutter.io/", androidToolbarColor: Colors.deepPurple);
                     Navigator.pop(context,"我是返回值123");
                   },
                 )

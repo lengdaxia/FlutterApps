@@ -40,8 +40,9 @@ class _ColorPageState extends State<ColorPage> {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 10),
-              child: null,
-            )
+              child: NavBar(color: Colors.blue,title: '标题',)
+            ),
+            NavBar(color: Colors.white,title: '标题',)
           ],
         ),
       ),

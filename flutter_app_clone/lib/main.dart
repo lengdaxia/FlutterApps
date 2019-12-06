@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_clone/apptheme.dart';
+import 'package:flutter_app_clone/pages/dialog_demo_page.dart';
+import 'package:flutter_app_clone/pages/future_and_stream_demo_page.dart';
 import 'package:flutter_app_clone/pages/progress_demo_page.dart';
 import 'package:flutter_app_clone/pages/switch_demo_page.dart';
+import 'package:flutter_app_clone/pages/theme_demo_page.dart';
 import 'base_page.dart';
 import 'pages/index.dart';
 
@@ -14,9 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter App Basic2Advanced',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: Colors.redAccent[300],
-      ),
+      theme: appTheme,
       home: MyHomePage(),
     );
   }
@@ -61,10 +63,12 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
     Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         title: Text('Flutter Demo'),
       ),
       body: ListView(
+
         children: <Widget>[
           ExpansionTile(
             title: Text("第一个Flutter应用"),
@@ -106,9 +110,9 @@ class _MyHomePageState extends State<MyHomePage> {
               PageInfo('数据共享（inheritedWidget）', (context) => InheritedWidgetPage()),
               PageInfo('跨组件状况管理(Provider)', (context) => ProviderPage()),
               PageInfo('颜色和MaterialColor', (context) => ColorPage()),
-              PageInfo('主题-Theme', (context) => null),
-              PageInfo('FutureBuilder和StreamBuilder', (context) => null),
-              PageInfo('对话框', (context) => null),
+              PageInfo('主题-Theme', (context) => ThemePage()),
+              PageInfo('FutureBuilder和StreamBuilder', (context) => FutureAndStreamPage()),
+              PageInfo('对话框', (context) => DialogPage()),
             ]),
           ),
           ExpansionTile(
