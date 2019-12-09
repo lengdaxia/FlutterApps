@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_clone/apptheme.dart';
 import 'package:flutter_app_clone/pages/dialog_demo_page.dart';
 import 'package:flutter_app_clone/pages/future_and_stream_demo_page.dart';
+import 'package:flutter_app_clone/pages/gesture_demo_page.dart';
+import 'package:flutter_app_clone/pages/notifacation_demo_page.dart';
+import 'package:flutter_app_clone/pages/pointer_demo_page.dart';
 import 'package:flutter_app_clone/pages/progress_demo_page.dart';
 import 'package:flutter_app_clone/pages/switch_demo_page.dart';
 import 'package:flutter_app_clone/pages/theme_demo_page.dart';
@@ -24,20 +27,15 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
 class MyHomePage extends StatefulWidget {
   @override
-
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-
-
 class _MyHomePageState extends State<MyHomePage> {
-
-  void _openPage(BuildContext context, PageInfo page){
-    Navigator.push(context, MaterialPageRoute(builder: (context){
-      if(!page.withScaffold){
+  void _openPage(BuildContext context, PageInfo page) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      if (!page.withScaffold) {
         return page.builder(context);
       }
       return PageScaffold(
@@ -45,15 +43,14 @@ class _MyHomePageState extends State<MyHomePage> {
         body: page.builder(context),
         padding: page.padding,
       );
-    })
-    );
+    }));
   }
 
   List<Widget> _generateItem(BuildContext context, List<PageInfo> children) {
-    return children.map<Widget>((page){
+    return children.map<Widget>((page) {
       return ListTile(
         title: Text(page.title, style: TextStyle(color: Colors.red[400])),
-        contentPadding: EdgeInsets.only(left: 30,right: 16),
+        contentPadding: EdgeInsets.only(left: 30, right: 16),
         trailing: Icon(Icons.keyboard_arrow_right),
         onTap: () => _openPage(context, page),
       );
@@ -61,14 +58,13 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   @override
-    Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         title: Text('Flutter Demo'),
       ),
       body: ListView(
-
         children: <Widget>[
           ExpansionTile(
             title: Text("第一个Flutter应用"),
@@ -79,20 +75,20 @@ class _MyHomePageState extends State<MyHomePage> {
           ExpansionTile(
             title: Text('基础组件'),
             children: _generateItem(context, [
-              PageInfo("文本， 字体样式",(context) => TextPage()),
+              PageInfo("文本， 字体样式", (context) => TextPage()),
               PageInfo("textfield", (context) => TextFieldPage()),
-              PageInfo("按钮",(context) => ButtonPage()),
-              PageInfo("图片伸缩",(context) => ImageAndIconPage()),
-              PageInfo("单选开关和复选框",(context) => SwitchPage()),
-              PageInfo("进度条",(context) => ProgressPage()),
+              PageInfo("按钮", (context) => ButtonPage()),
+              PageInfo("图片伸缩", (context) => ImageAndIconPage()),
+              PageInfo("单选开关和复选框", (context) => SwitchPage()),
+              PageInfo("进度条", (context) => ProgressPage()),
             ]),
           ),
           ExpansionTile(
             title: Text('布局类组件'),
             children: _generateItem(context, [
-              PageInfo("Column居中",(context) => CenterColumnPage()),
-              PageInfo("表格布局",(context) => TablePage()),
-              PageInfo("对齐及相对定位",(context) => AlignPgae()),
+              PageInfo("Column居中", (context) => CenterColumnPage()),
+              PageInfo("表格布局", (context) => TablePage()),
+              PageInfo("对齐及相对定位", (context) => AlignPgae()),
             ]),
           ),
           ExpansionTile(
@@ -101,24 +97,29 @@ class _MyHomePageState extends State<MyHomePage> {
               PageInfo('填充Paddding', (context) => PaddingPage()),
               PageInfo('尺寸限制类容器', (context) => SizeConstraintsPage()),
               PageInfo('DecoratedBox', (context) => DecoratedBoxPage()),
-              PageInfo('Scaffold, tabbar, 底部导航栏', (context) => ScaffoldPage(), withScaffold: false),
+              PageInfo('Scaffold, tabbar, 底部导航栏', (context) => ScaffoldPage(),
+                  withScaffold: false),
             ]),
           ),
           ExpansionTile(
             title: Text("功能性组件"),
             children: _generateItem(context, [
-              PageInfo('数据共享（inheritedWidget）', (context) => InheritedWidgetPage()),
+              PageInfo(
+                  '数据共享（inheritedWidget）', (context) => InheritedWidgetPage()),
               PageInfo('跨组件状况管理(Provider)', (context) => ProviderPage()),
               PageInfo('颜色和MaterialColor', (context) => ColorPage()),
               PageInfo('主题-Theme', (context) => ThemePage()),
-              PageInfo('FutureBuilder和StreamBuilder', (context) => FutureAndStreamPage()),
+              PageInfo('FutureBuilder和StreamBuilder',
+                  (context) => FutureAndStreamPage()),
               PageInfo('对话框', (context) => DialogPage()),
             ]),
           ),
           ExpansionTile(
-            title: Text("时间处理与通知"),
+            title: Text("事件处理与通知"),
             children: _generateItem(context, [
-              PageInfo('通知（Notification）', (context) => null),
+              PageInfo('通知（Notification）', (context) => Notification2Page()),
+              PageInfo('原始指针事件', (context) => PointerPage()),
+              PageInfo('gesture事件', (context) => GesturePage()),
             ]),
           ),
           ExpansionTile(

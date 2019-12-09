@@ -144,7 +144,6 @@ class _DialogPageState extends State<DialogPage> {
     var date = DateTime.now();
     return showDatePicker(
       context: context,
-      // locale: Locale('ja'),
       initialDate: date,
       firstDate: date,
       lastDate: date.add(Duration(days: 365)),
