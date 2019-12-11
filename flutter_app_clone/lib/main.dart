@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_clone/apptheme.dart';
 import 'package:flutter_app_clone/pages/animated_switcher_counter.dart';
+import 'package:flutter_app_clone/pages/custom_paint_demo_page.dart';
 import 'package:flutter_app_clone/pages/dialog_demo_page.dart';
 import 'package:flutter_app_clone/pages/future_and_stream_demo_page.dart';
 import 'package:flutter_app_clone/pages/gesture_demo_page.dart';
+import 'package:flutter_app_clone/pages/gradient_demo_page.dart';
 import 'package:flutter_app_clone/pages/hero_demo_page.dart';
 import 'package:flutter_app_clone/pages/notifacation_demo_page.dart';
 import 'package:flutter_app_clone/pages/pointer_demo_page.dart';
@@ -11,7 +13,10 @@ import 'package:flutter_app_clone/pages/progress_demo_page.dart';
 import 'package:flutter_app_clone/pages/scale_animation_demo_page.dart';
 import 'package:flutter_app_clone/pages/switch_demo_page.dart';
 import 'package:flutter_app_clone/pages/theme_demo_page.dart';
+import 'package:flutter_app_clone/pages/turnbox_demo_page.dart';
 import 'package:flutter_app_clone/stagger_aninmation_demo_page.dart';
+import 'pages/gradient_circular_indicator_demo_page.dart';
+
 import 'base_page.dart';
 import 'pages/index.dart';
 
@@ -129,12 +134,11 @@ class _MyHomePageState extends State<MyHomePage> {
           ExpansionTile(
             title: Text("自定义组件"),
             children: _generateItem(context, [
-              PageInfo('数据共享（inheritedWidget）', (context) => null),
-              PageInfo('跨组件状况管理(Provider)', (context) => null),
-              PageInfo('颜色和MaterialColor', (context) => null),
-              PageInfo('主题-Theme', (context) => null),
-              PageInfo('FutureBuilder和StreamBuilder', (context) => null),
-              PageInfo('对话框', (context) => null),
+              PageInfo("Gradient Buttons", (context) => GradientButtonPage()),
+              PageInfo('TurnBox ', (context) => TurnBoxPage()),
+              PageInfo('Custom Painter', (context) => CustomPaintingPage()),
+              PageInfo("GradientCircularProgressIndicator",
+                  (context) => GradientCircularProgressPage())
             ]),
           ),
           ExpansionTile(
