@@ -3,10 +3,12 @@ import 'package:flutter_app_clone/apptheme.dart';
 import 'package:flutter_app_clone/pages/animated_switcher_counter.dart';
 import 'package:flutter_app_clone/pages/custom_paint_demo_page.dart';
 import 'package:flutter_app_clone/pages/dialog_demo_page.dart';
+import 'package:flutter_app_clone/pages/file_operation_demo_page.dart';
 import 'package:flutter_app_clone/pages/future_and_stream_demo_page.dart';
 import 'package:flutter_app_clone/pages/gesture_demo_page.dart';
 import 'package:flutter_app_clone/pages/gradient_demo_page.dart';
 import 'package:flutter_app_clone/pages/hero_demo_page.dart';
+import 'package:flutter_app_clone/pages/http_demo_page.dart';
 import 'package:flutter_app_clone/pages/notifacation_demo_page.dart';
 import 'package:flutter_app_clone/pages/pointer_demo_page.dart';
 import 'package:flutter_app_clone/pages/progress_demo_page.dart';
@@ -162,6 +164,8 @@ class _MyHomePageState extends State<MyHomePage> {
             children: _generateItem(context, [
               PageInfo('相机', (context) => null),
               PageInfo('PlatformView示例（Webview）', (context) => null),
+              PageInfo('文件操作 filehandle', (context) => FileOperationPage()),
+              PageInfo('dart http 请求', (context) => HttpPage()),
             ]),
           )
         ],

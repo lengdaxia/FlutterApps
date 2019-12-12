@@ -2,12 +2,15 @@ PODS:
   - Flutter (1.0.0)
   - flutter_web_browser (0.11.0):
     - Flutter
+  - path_provider (0.0.1):
+    - Flutter
   - video_player (0.0.1):
     - Flutter
 
 DEPENDENCIES:
   - Flutter (from `.symlinks/flutter/ios`)
   - flutter_web_browser (from `.symlinks/plugins/flutter_web_browser/ios`)
+  - path_provider (from `.symlinks/plugins/path_provider/ios`)
   - video_player (from `.symlinks/plugins/video_player/ios`)
 
 EXTERNAL SOURCES:
@@ -15,12 +18,15 @@ EXTERNAL SOURCES:
     :path: ".symlinks/flutter/ios"
   flutter_web_browser:
     :path: ".symlinks/plugins/flutter_web_browser/ios"
+  path_provider:
+    :path: ".symlinks/plugins/path_provider/ios"
   video_player:
     :path: ".symlinks/plugins/video_player/ios"
 
 SPEC CHECKSUMS:
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   flutter_web_browser: bdea232160dec44dec86540bee05168cc844ef7c
+  path_provider: fb74bd0465e96b594bb3b5088ee4a4e7bb1f2a9d
   video_player: 69c5f029fac4ffe4fc8a85ea7f7b793709661549
 
 PODFILE CHECKSUM: b6a0a141693093b304368d08511b46cf3d1d0ac5
