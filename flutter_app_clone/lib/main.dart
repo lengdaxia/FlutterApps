@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_clone/apptheme.dart';
 import 'package:flutter_app_clone/pages/animated_switcher_counter.dart';
@@ -16,6 +17,7 @@ import 'package:flutter_app_clone/pages/scale_animation_demo_page.dart';
 import 'package:flutter_app_clone/pages/switch_demo_page.dart';
 import 'package:flutter_app_clone/pages/theme_demo_page.dart';
 import 'package:flutter_app_clone/pages/turnbox_demo_page.dart';
+import 'package:flutter_app_clone/pages/wrap_demo_page.dart';
 import 'package:flutter_app_clone/stagger_aninmation_demo_page.dart';
 import 'pages/gradient_circular_indicator_demo_page.dart';
 
@@ -47,6 +49,8 @@ class _MyHomePageState extends State<MyHomePage> {
   void _openPage(BuildContext context, PageInfo page) {
     Navigator.push(context, MaterialPageRoute(builder: (context) {
       if (!page.withScaffold) {
+        Dio();
+
         return page.builder(context);
       }
       return PageScaffold(
@@ -100,6 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
               PageInfo("Column居中", (context) => CenterColumnPage()),
               PageInfo("表格布局", (context) => TablePage()),
               PageInfo("对齐及相对定位", (context) => AlignPgae()),
+              PageInfo('Wrap widget', (context) => WrapPage())
             ]),
           ),
           ExpansionTile(
